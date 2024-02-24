@@ -33,6 +33,8 @@ export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore();
 
+export const onDBChange = callback => onSnapshot(collection(db, "citas"), callback);
+
 export async function checkGmail(gmail) {
     try {
         const q = query(
